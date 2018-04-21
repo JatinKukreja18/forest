@@ -1,0 +1,99 @@
+body, ul, h1, h2, h3, h4, h5, h6, p {
+  margin: 0px;
+  box-sizing: border-box;
+  padding: 0px;
+  font-family: "Montserrat";
+  font-weight: 300; }
+
+/* 
+    HeroBanner Css
+*/
+.f-hero-banner {
+  position: relative;
+  width: 100%; }
+  .f-hero-banner video {
+    object-fit: cover;
+    width: 100%; }
+  .f-hero-banner .f-button-group {
+    position: absolute;
+    left: calc(50% - 125px);
+    top: calc(50% - 29px); }
+
+/* 
+    Header Styling
+*/
+.f-header {
+  position: absolute;
+  box-sizing: border-box;
+  width: 100%;
+  top: 0px;
+  z-index: 1;
+  left: 0px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between; }
+  .f-header > .logo {
+    font-size: 24px;
+    color: #fff;
+    height: 50px; }
+
+/* Generic styling
+*/
+.f-social-icons {
+  list-style-type: none;
+  display: flex; }
+  .f-social-icons li a {
+    color: #fff;
+    text-decoration: none;
+    display: block;
+    position: relative;
+    transition: .5s;
+    padding: 10px;
+    width: 40px;
+    height: 40px;
+    box-sizing: border-box;
+    text-align: center;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center; }
+    .f-social-icons li a i {
+      position: relative;
+      font-size: 20px; }
+
+.border-animate::before, .border-animate::after {
+  width: 100%;
+  height: 100%;
+  z-index: 3;
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  box-sizing: border-box;
+  -webkit-transform: scale(0);
+  transition: 0.5s; }
+.border-animate::before {
+  border-bottom: 1px solid #fff;
+  -webkit-transform-origin: 0 100%; }
+.border-animate::after {
+  border-top: 1px solid #fff;
+  -webkit-transform-origin: 100% 0%; }
+.border-animate:hover::before, .border-animate:hover::after {
+  transform: scale(1); }
+
+.f-button-group {
+  display: flex; }
+
+.f-button {
+  padding: 10px 20px;
+  font-size: 16px;
+  background: transparent;
+  color: #fff;
+  cursor: pointer;
+  border: 0px;
+  position: relative;
+  /* border: 1px solid #fff; */
+  margin: 0px 20px 20px 0px;
+  background-color: #ffffff26; }
+
+/*# sourceMappingURL=style.css.map */
