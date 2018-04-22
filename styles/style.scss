@@ -7,13 +7,18 @@ body,ul,h1,h2,h3,h4,h5,h6,p{
     font-weight: 300;
 }
 
-
+h1,h2,h3,h4,h5,h6{
+    color: $dark-accent;
+}
 /* 
     HeroBanner Css
 */ 
+
 .f-hero-banner {
     position: relative;
+    overflow: hidden;
     width: 100%;
+    min-height: 400px;
     height: 100vh;
     video{
         height: 100%;
@@ -39,11 +44,11 @@ body,ul,h1,h2,h3,h4,h5,h6,p{
     left: 0px;
     padding: 20px;
     display: flex;
+    align-items: center;
     justify-content: space-between;
     >.logo{
         font-size: 24px;
         color: #fff;
-        height: 50px;
     }
     >.menu{
         a{
@@ -75,7 +80,14 @@ body,ul,h1,h2,h3,h4,h5,h6,p{
                     transform-origin: 60% 68%;
                 }
             }
-            
+            &:hover{
+                svg rect:first-child{
+                    transform: translateY(-30px);
+                }
+                svg rect:last-child{
+                    transform: translateY(30px);
+                }
+            }
             &.active{
                 svg rect:first-child{
                     transform: rotate(45deg);
@@ -87,8 +99,56 @@ body,ul,h1,h2,h3,h4,h5,h6,p{
         }
     }
 }
-
-/* Generic styling
+/*
+    Intro (Section 1)
+*/
+.intro{
+    height: 100vh;
+    width: 100%;
+    min-height: 400px;
+    display: flex;
+    position: relative;
+    div:first-child{
+        width: 50%;
+        transition: 0.5s;
+        background: #fff;
+        padding: 40px;
+        box-sizing: border-box;
+        h1{
+            font-weight: 400;
+            margin-bottom: 40px;
+        }
+        p.content.big-start::first-letter{
+                color: $brand-color;
+                font-size: 30px;
+        }
+        p.content{
+            margin-bottom: 20px;
+        }
+    }
+    .backdrop{
+        background: url("../assets/2.jpg");
+        background-position: center;
+        background-size: cover; 
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        z-index: -1;
+        height: 100%;
+    }
+}
+@media only screen and (max-width : 768px) {
+    .intro{
+        div:first-child{
+            width: 100%;
+            background: rgba(255, 255, 255, 0.75);
+        }
+    }
+}
+    
+/* 
+    Generic styling
 */
 .f-social-icons{
     list-style-type: none;
@@ -119,7 +179,9 @@ body,ul,h1,h2,h3,h4,h5,h6,p{
         }
     }
 }
-
+/*
+    Button Styling
+*/
 .border-animate{
     &::before,
     &::after {
@@ -154,12 +216,13 @@ body,ul,h1,h2,h3,h4,h5,h6,p{
 .f-button-group{
     display: flex;
 }
-.f-button{
+.f-button-transparent{
     padding: 10px 20px;
     font-size: 16px;
     background: transparent;
     color: #fff;
     cursor: pointer;
+    font-weight: 300;
     border: 0px;
     position: relative;
     /* border: 1px solid #fff; */
@@ -179,9 +242,18 @@ body,ul,h1,h2,h3,h4,h5,h6,p{
     left: 0px;
     transform: scale(0);
     transition: .5s;
+    transition-delay: .5s;
     transform-origin: 100% 0;
     &.active{
-        transform: scale(1);
+        transform: scale(1); 
+        transition-delay: 0s;
+        .menu-modal-container{
+            ul{
+                opacity: 1;
+                transition: 1s;
+                transition-delay: 0.5s;
+            }
+        }
     }
     .menu-modal-container{
         display: flex;
@@ -192,7 +264,9 @@ body,ul,h1,h2,h3,h4,h5,h6,p{
             display: flex;
             flex-direction: column;
             list-style-type: none;
-            width: auto;
+            width: auto;opacity: 0;
+            transition: .5s;
+            transition-delay: 0s;
             li{
                 a{
                     padding: 10px 40px;
