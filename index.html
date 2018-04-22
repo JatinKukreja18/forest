@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600,700" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.10/css/all.css" integrity="sha384-+d0P83n9kaQMCwj8F4RJB66tzIwOKmrdb46+porD/OvrJ+37WqIM7UoBtwHO6Nlg" crossorigin="anonymous">
-    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <link rel="stylesheet" type="text/css" media="screen" href="styles/style.css" />
     <script src="main.js"></script>
 </head>
 <body>
@@ -21,13 +21,55 @@
             <li><a href=""class="border-animate"><i class="fab fa-behance"></i></a></li>
             <li><a href=""class="border-animate"><i class="fab fa-linkedin-in"></i></a></li>
         </ul>
+        <div class="menu">
+            <a class="" id="menu" onclick="toggleMenu()">
+                        <svg version="1.1" id="Capa_1"viewBox="0 0 344.339 344.339" >
+                   
+                               <rect y="46.06" width="344.339" height="29.52" fill="currentColor"/>
+                           
+                               <rect y="156.506" width="344.339" height="29.52" fill="currentColor"/>
+                           
+                               <rect y="268.748" width="344.339" height="29.531" fill="currentColor"/>
+                          
+                   </svg>            </a>
+        </div>
     </header>
     <div class="f-hero-banner">
-       <video src="hero.mp4" autoplay loop></video>
+       <video src="assets/hero.mp4" autoplay loop></video>
        <div class="f-button-group">
            <button class="f-button border-animate">Discover</button>
            <button class="f-button border-animate">Subscribe</button>
        </div>
     </div>
+
+
+
+    <div class="menu-modal" id="menu-modal">
+        <div class="menu-modal-container">
+                <ul>
+                    <li><a class="border-animate" href="home">Home</a></li>
+                    <li><a class="border-animate" href="">About</a></li>
+                    <li><a class="border-animate" href="">Blog</a></li>
+                    <li><a class="border-animate" href="">Contact</a></li>
+                </ul>
+        </div>
+    </div>
 </body>
+<script>
+    function toggleMenu(){
+        if(document.getElementById("menu").className == ""){
+            document.getElementById("menu").className = "active";   
+        }
+        else{
+            document.getElementById("menu").className = ""   
+        }
+
+        if(document.getElementById("menu-modal").className == "menu-modal"){
+            document.getElementById("menu-modal").className = "menu-modal active"   
+        }
+        else{
+            document.getElementById("menu-modal").className = "menu-modal"               
+        }
+    }
+</script>
 </html>
