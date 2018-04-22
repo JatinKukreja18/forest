@@ -30,7 +30,7 @@ h1, h2, h3, h4, h5, h6 {
     Header Styling
 */
 .f-header {
-  position: absolute;
+  position: fixed;
   box-sizing: border-box;
   width: 100%;
   top: 0px;
@@ -185,7 +185,7 @@ h1, h2, h3, h4, h5, h6 {
     Menu modal
 */
 .menu-modal {
-  position: absolute;
+  position: fixed;
   width: 100vw;
   height: 100vh;
   background: #93A98A;
