@@ -30,7 +30,7 @@ h1, h2, h3, h4, h5, h6 {
     Header Styling
 */
 .f-header {
-  position: fixed;
+  position: absolute;
   box-sizing: border-box;
   width: 100%;
   top: 0px;
@@ -39,7 +39,12 @@ h1, h2, h3, h4, h5, h6 {
   padding: 20px;
   display: flex;
   align-items: center;
-  justify-content: space-between; }
+  justify-content: space-between;
+  transition: 0.5s; }
+  .f-header.active {
+    padding: 0px 40px;
+    position: fixed;
+    background-color: rgba(147, 169, 138, 0.9); }
   .f-header > .logo {
     font-size: 24px;
     color: #fff; }
@@ -86,20 +91,6 @@ h1, h2, h3, h4, h5, h6 {
   min-height: 400px;
   display: flex;
   position: relative; }
-  .intro div:first-child {
-    width: 50%;
-    transition: 0.5s;
-    background: #fff;
-    padding: 40px;
-    box-sizing: border-box; }
-    .intro div:first-child h1 {
-      font-weight: 400;
-      margin-bottom: 40px; }
-    .intro div:first-child p.content.big-start::first-letter {
-      color: #93A98A;
-      font-size: 30px; }
-    .intro div:first-child p.content {
-      margin-bottom: 20px; }
   .intro .backdrop {
     background: url("../assets/2.jpg");
     background-position: center;
@@ -111,6 +102,25 @@ h1, h2, h3, h4, h5, h6 {
     z-index: -1;
     height: 100%; }
 
+.content {
+  padding: 40px;
+  transition: 0.5s;
+  background: #fff;
+  box-sizing: border-box; }
+  .content.half {
+    width: 50%; }
+  .content p.text.big-start::first-letter {
+    color: #93A98A;
+    font-size: 30px; }
+  .content p.text {
+    margin-bottom: 20px; }
+  .content::after {
+    content: ""; }
+
+.title {
+  font-weight: 400;
+  margin-bottom: 40px; }
+
 @media only screen and (max-width: 768px) {
   .intro div:first-child {
     width: 100%;
@@ -118,6 +128,9 @@ h1, h2, h3, h4, h5, h6 {
 /* 
     Generic styling
 */
+.offset-50 {
+  margin-left: 50%; }
+
 .f-social-icons {
   list-style-type: none;
   display: flex; }

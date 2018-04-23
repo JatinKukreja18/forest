@@ -36,7 +36,7 @@ h1,h2,h3,h4,h5,h6{
     Header Styling
 */ 
 .f-header{
-    position: fixed;
+    position: absolute;
     box-sizing: border-box;
     width: 100%;
     top: 0px;
@@ -46,6 +46,12 @@ h1,h2,h3,h4,h5,h6{
     display: flex;
     align-items: center;
     justify-content: space-between;
+    transition: 0.5s;
+    &.active{
+        padding: 0px 40px;
+        position: fixed;
+        background-color: rgba($brand-color , 0.9);
+    }
     >.logo{
         font-size: 24px;
         color: #fff;
@@ -108,24 +114,7 @@ h1,h2,h3,h4,h5,h6{
     min-height: 400px;
     display: flex;
     position: relative;
-    div:first-child{
-        width: 50%;
-        transition: 0.5s;
-        background: #fff;
-        padding: 40px;
-        box-sizing: border-box;
-        h1{
-            font-weight: 400;
-            margin-bottom: 40px;
-        }
-        p.content.big-start::first-letter{
-                color: $brand-color;
-                font-size: 30px;
-        }
-        p.content{
-            margin-bottom: 20px;
-        }
-    }
+    
     .backdrop{
         background: url("../assets/2.jpg");
         background-position: center;
@@ -137,6 +126,30 @@ h1,h2,h3,h4,h5,h6{
         z-index: -1;
         height: 100%;
     }
+}
+.content{
+    padding: 40px;
+    transition: 0.5s;
+    background: #fff;
+    box-sizing: border-box;
+    &.half{
+    width: 50%;            
+    }
+    
+    p.text.big-start::first-letter{
+            color: $brand-color;
+            font-size: 30px;
+    }
+    p.text{
+        margin-bottom: 20px;
+    }
+    &::after{
+        content: "";
+    }
+}
+.title{
+        font-weight: 400;
+        margin-bottom: 40px;
 }
 @media only screen and (max-width : 768px) {
     .intro{
@@ -150,6 +163,9 @@ h1,h2,h3,h4,h5,h6{
 /* 
     Generic styling
 */
+.offset-50{
+    margin-left: 50%;
+}
 .f-social-icons{
     list-style-type: none;
     display: flex;
