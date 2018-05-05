@@ -45,7 +45,8 @@ h1, h2, h3, h4, h5, h6 {
     animation-timing-function: ease-in-out;
     animation-iteration-count: infinite;
     -webkit-animation-iteration-count: infinite;
-    box-sizing: border-box; }
+    box-sizing: border-box;
+    cursor: pointer; }
     .f-hero-banner .down-scroll path {
       fill: currentColor;
       stroke: currentColor;
@@ -173,12 +174,15 @@ section.full {
   .services ul {
     width: 100%;
     display: flex;
-    justify-content: center;
-    list-style-type: none; }
+    justify-content: space-evenly;
+    list-style-type: none;
+    flex-wrap: wrap; }
     .services ul li {
       display: flex;
       flex: 1;
       flex-direction: column;
+      min-width: 140px;
+      max-width: 140px;
       align-items: center;
       position: relative;
       padding: 20px;
