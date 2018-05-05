@@ -1,5 +1,6 @@
-
 @import "colors";
+@import "mixins";
+
 body,ul,h1,h2,h3,h4,h5,h6,p{
     margin: 0px;box-sizing: border-box;
     padding: 0px;
@@ -89,7 +90,7 @@ h1,h2,h3,h4,h5,h6{
     justify-content: space-between;
     transition: 0.5s;
     &.active{
-        padding: 0px 40px;
+        padding: 0px 20px;
         position: fixed;
         background-color: rgba($brand-color , 0.9);
     }
@@ -237,6 +238,7 @@ section.full{
             cursor: pointer;
             transition-delay: .5s;
             &:hover{
+                @include box-shadow(0px , 0px , 400px, #90a587 inset); 
                 box-shadow: 1px 0px 1px 400px inset #90a587;
             }
             img{

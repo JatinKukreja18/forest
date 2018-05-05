@@ -20,17 +20,29 @@ function onScroll(e) {
     }else{
         document.getElementById("header").className = "f-header";        
     }
-    
 }
+// animation function
 function scrollToSection(el) {
-    console.log(el);
+    item = document.querySelector(el)
     
-    element = document.querySelector(el)
-    window.scroll({
-    
-      behavior: 'smooth',
-      left: 0,
-      top: element.offsetTop
-    });
+    var diff=(item.offsetTop-window.scrollY)/20;
+    if(!window._lastDiff){
+        window._lastDiff = 0;
+    }
+
+    console.log('test')
+
+    if (Math.abs(diff)>2) {
+        window.scrollTo(0, (window.scrollY+diff))
+        clearTimeout(window._TO)
+
+        if(diff !== window._lastDiff){
+            window._lastDiff = diff;
+            window._TO=setTimeout(scrollToSection, 15, el);
+        }
+    } else {
+        console.timeEnd('test');
+        window.scrollTo(0, item.offsetTop)
+    }
 }
 document.addEventListener("scroll", onScroll);
