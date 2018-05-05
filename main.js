@@ -22,4 +22,14 @@ function onScroll(e) {
     }
     
 }
+function scrollToSection(el) {
+    console.log(el);
+    
+    element = document.querySelector(el)
+    window.scroll({
+      behavior: 'smooth',
+      left: 0,
+      top: element.offsetTop
+    });
+}
 document.addEventListener("scroll", onScroll);

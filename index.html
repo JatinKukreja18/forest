@@ -11,6 +11,8 @@
     <script src="main.js"></script>
 </head>
 <body>
+
+    <!-- header -->
     <header class="f-header" id="header">
         <div class="logo">
                 Forest
@@ -34,6 +36,7 @@
                    </svg>            </a>
         </div>
     </header>
+    <!-- Banner -->
     <div class="f-hero-banner">
        <video autoplay loop>
         <source src="assets/hero.mp4" type="video/mp4">
@@ -42,9 +45,21 @@
            <button class="f-button-transparent border-animate">Discover</button>
            <button class="f-button-transparent border-animate">Subscribe</button>
        </div>
+        <a onclick="scrollToSection('#intro')" class="down-scroll">
+                <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                viewBox="0 0 32.634 32.634" style="enable-background:new 0 0 32.634 32.634;" xml:space="preserve">
+           <g>
+               <path d="M16.317,32.634c-0.276,0-0.5-0.224-0.5-0.5V0.5c0-0.276,0.224-0.5,0.5-0.5s0.5,0.224,0.5,0.5v31.634
+                   C16.817,32.41,16.593,32.634,16.317,32.634z"/>
+               <path d="M16.315,32.634L16.315,32.634c-0.133,0-0.26-0.053-0.354-0.146L3.428,19.951c-0.195-0.195-0.195-0.512,0-0.707
+                   s0.512-0.195,0.707,0l12.179,12.183l12.184-12.183c0.195-0.195,0.512-0.195,0.707,0s0.195,0.512,0,0.707L16.668,32.487
+                   C16.574,32.581,16.448,32.634,16.315,32.634z"/>
+           </g>
+           </svg>
+        </a>    
     </div>
 
-    <section class="intro" id="intro">
+    <section class="intro full" id="intro">
             <div class="content half">
                 <h1 class="title">Philosophy</h1>
                 <p class="text big-start">
@@ -56,6 +71,35 @@
             </div>
             <div class="backdrop">
             </div>
+    </section>
+    <section class="services" id="intro">
+            <h1 class="title">Services</h1>            
+        <ul>
+            <li class="border-animate">
+                <img src="./assets//forest-icons/svg/001-moustache.svg" alt="">
+                <h3>Moustache</h3>
+            </li>
+            <li class="border-animate">
+                <img src="./assets//forest-icons/svg/003-shirt.svg" alt="">
+                <h3>Shirt</h3>
+            </li>
+            <li class="border-animate">
+                <img src="./assets//forest-icons/svg/004-axe.svg" alt="">
+                <h3>Axe</h3>
+            </li>
+            <li class="border-animate"> 
+                    <img src="./assets//forest-icons/svg/005-bonfire.svg" alt="">
+                <h3>Bonfire</h3>
+            </li>
+            <li class="border-animate">
+                <img src="./assets//forest-icons/svg/006-saw.svg" alt="">
+                <h3>Saw</h3>
+            </li>
+            <li class="border-animate">
+                <img src="./assets//forest-icons/svg/008-tent.svg" alt="">
+                <h3>Tent</h3>
+            </li>
+        </ul>
     </section>
    
     <div class="menu-modal" id="menu-modal">

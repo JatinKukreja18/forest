@@ -30,6 +30,45 @@ h1,h2,h3,h4,h5,h6{
         left: calc(50% - 125px);
         top: calc(50% - 29px);
     }
+    .down-scroll{
+        color: white;
+        display: block;
+        position: absolute;
+        bottom: 0px;
+        left: calc(50% - 20px);
+        text-decoration: none;
+        width: 40px;
+        text-align: center;
+        height: 40px;
+        padding: 5px;
+        margin-bottom: 15px;
+        -webkit-animation-duration: 1s;
+        animation-duration: 3s;
+        -webkit-animation-fill-mode: both;
+        animation-fill-mode: both;
+        -webkit-animation-timing-function: ease-in-out;
+        animation-timing-function: ease-in-out;
+        animation-iteration-count: infinite;
+        -webkit-animation-iteration-count: infinite;
+        box-sizing: border-box;
+        path{
+            fill:currentColor;
+            stroke: currentColor;
+            transition: .3s;
+        }
+        &:hover{
+            animation-name: bounce;
+            -moz-animation-name: bounce;
+            path:first-child{
+                transform: rotate(90deg) translateX(3px) scaleY(0.75);
+                transform-origin: 50%;
+                fill: #fff;
+            }
+            path:nth-child(2){
+                
+            }
+        }
+    }
 }
 
 /* 
@@ -43,7 +82,8 @@ h1,h2,h3,h4,h5,h6{
     z-index: 1;
     left: 0px;
     padding: 20px;
-    display: flex;
+    display: grid;
+    grid-template-columns: 33.33% 33.33% 33.33%;
     align-items: center;
     justify-content: space-between;
     transition: 0.5s;
@@ -57,6 +97,8 @@ h1,h2,h3,h4,h5,h6{
         color: #fff;
     }
     >.menu{
+        justify-content: flex-end;
+        display: flex;
         a{
             color: #fff;
             text-decoration: none;
@@ -108,12 +150,14 @@ h1,h2,h3,h4,h5,h6{
 /*
     Intro (Section 1)
 */
-.intro{
+section.full{
     height: 100vh;
     width: 100%;
     min-height: 400px;
     display: flex;
     position: relative;
+}
+.intro{
     
     .backdrop{
         background: url("../assets/2.jpg");
@@ -159,7 +203,62 @@ h1,h2,h3,h4,h5,h6{
         }
     }
 }
-    
+// section 2
+
+.services{
+    background: $dark-accent;
+    padding: 40px;
+    &.full{
+        display: block;
+    }
+    h1{
+        color: #fff;
+        text-align: center;
+    }
+    ul{
+        width: 100%;
+        display: flex;    
+        justify-content: center;
+        list-style-type: none;
+        
+        li{
+            display: flex;
+            flex:1;
+            flex-direction: column;
+            align-items: center;
+            position: relative;
+            padding: 20px;
+            justify-content: space-evenly;
+            transition: .5s;
+            cursor: pointer;
+            transition-delay: .5s;
+            &:hover{
+                box-shadow: 1px 0px 1px 400px inset #90a587;
+            }
+            img{
+                width: 70%;
+                display: block;
+                margin: auto;
+                max-width: 150px;
+            }
+            h3{
+                color: #fff;
+            }
+            
+        }
+    }
+    .backdrop{
+        background: url("../assets/2.jpg");
+        background-position: center;
+        background-size: cover; 
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        z-index: -1;
+        height: 100%;
+    }
+}
 /* 
     Generic styling
 */
@@ -169,6 +268,7 @@ h1,h2,h3,h4,h5,h6{
 .f-social-icons{
     list-style-type: none;
     display: flex;
+    justify-content: center;
     li{
         a{
             color: #fff;
@@ -242,7 +342,7 @@ h1,h2,h3,h4,h5,h6{
     border: 0px;
     position: relative;
     /* border: 1px solid #fff; */
-    margin: 0px 20px 20px 0px;
+    margin: 10px;
     background-color: $color-primary-50;
 }
 
@@ -301,4 +401,24 @@ h1,h2,h3,h4,h5,h6{
             }
         }
     }
+}
+
+
+// animations
+@keyframes bounce {
+	0%, 100%, 20%, 50%, 80% {
+		-webkit-transform: translateY(0);
+		-ms-transform:     translateY(0);
+		transform:         translateY(0)
+	}
+	40% {
+		-webkit-transform: translateY(-30px);
+		-ms-transform:     translateY(-30px);
+		transform:         translateY(-30px)
+	}
+	60% {
+		-webkit-transform: translateY(-15px);
+		-ms-transform:     translateY(-15px);
+		transform:         translateY(-15px)
+	}
 }
