@@ -271,11 +271,80 @@ section.full{
         height: 100%;
     }
 }
+/*
+    Footer Styling
+*/
+.footer{
+    
+    background: $brand-color;
+    color: #ffff;
+    padding: 20px 40px;    
+}
+.contact-footer{
+    color: $brand-color;
+    padding: 40px;
+    h1{
+        font-weight: 400;
+        margin-bottom: 40px;
+    }
+    .forest-input-group{
+        margin: 0px -10px;
+        display: flex;
+        .forest-input{
+            flex:1;
+        }
+    }
+    .forest-textarea{
+        width: 100%;
+        margin: 0px;
+    }
+}
 /* 
     Generic styling
 */
 .offset-50{
     margin-left: 50%;
+}
+.forest-input{
+    padding: 10px 20px;
+    font-size: 16px;
+    background: transparent;
+    color: #fff;
+    /* cursor: pointer; */
+    font-weight: 300;
+    border: 1px solid transparent;
+    outline: none;
+    position: relative;
+    /* border: 1px solid #fff; */
+    transition: .3s;
+    margin: 10px;
+    background-color: $light-shade;
+    color: black;
+    &:focus{
+        border: 1px solid $dark-shade;
+    }
+}
+.forest-textarea{
+    padding: 10px 20px;
+    font-size: 16px;
+    background: transparent;
+    color: #fff;
+    /* cursor: pointer; */
+    font-weight: 300;
+    border: 1px solid transparent;
+    outline: none;
+    position: relative;
+    /* border: 1px solid #fff; */
+    transition: .3s;
+    margin: 10px;
+    background-color: $light-shade;
+    color: black;
+    resize: none;
+    height: 200px;
+    box-sizing: border-box;
+    &:focus{
+        border: 1px solid $dark-shade;
+    }
 }
 .f-social-icons{
     list-style-type: none;
